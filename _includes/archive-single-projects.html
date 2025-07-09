@@ -44,6 +44,24 @@
       <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Date:</strong> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
     {% endif %}
 
+    {% if post.duration %}
+      <p class="page__meta">
+        <strong><i class="fa fa-clock-o" aria-hidden="true"></i> Duration:</strong> 
+        {{ post.duration }}
+      </p>
+    {% endif %}
+  
+    {% if post.contributions %}
+      <div class="project-contributions">
+        <h3 class="contributions-title">Key Contributions:</h3>
+        <ul class="contributions-list">
+          {% for item in post.contributions %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
     {% if post.description and site.read_more != 'enabled' %}
       <p class="archive__item-description" itemprop="description">{{ post.description | markdownify }}</p>
     {% elsif post.description and site.read_more == 'enabled' %}
