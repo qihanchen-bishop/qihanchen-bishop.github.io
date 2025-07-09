@@ -37,7 +37,7 @@
       
       {% if post.duration %}
         <p class="page__meta">
-          <strong><i class="fa fa-clock-o" aria-hidden="true"></i> Duration:</strong> 
+          <strong><i class="fa fa-clock-o" aria-hidden="true"></i>Duration:</strong> 
           {{ post.duration }}
         </p>
       {% endif %}
@@ -50,13 +50,13 @@
       {% endif %}
     </div>
     
-    {% if post.team %}
+<!--     {% if post.team %}
       <p class="page__meta"><strong>Team:</strong> {{ post.team }}</p>
     {% endif %}
     
     {% if post.date %}
       <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Date:</strong> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
-    {% endif %}
+    {% endif %} -->
   
     <!-- 项目贡献列表 -->
     {% if post.contributions %}
