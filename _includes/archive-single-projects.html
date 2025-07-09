@@ -10,8 +10,8 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
-  data-date="{{ post.date | date_to_xmlschema }}">
+<div class="{{ include.type | default: "list" }}__item" data-date="{{ post.date | date_to_xmlschema }}">
+  
   <article class="archive__item" itemscope itemtype="http://schema.org/Project">
     {% if include.type == "grid" and summary %}
       <div class="archive__item-summary">
