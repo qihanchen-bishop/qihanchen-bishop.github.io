@@ -1,7 +1,5 @@
 ---
 title: "Medical Company Cooperation Project: Multi-organ Segmentation and 3D Reconstruction of CT Images (3D Segmentation and Reconstruction)"
-date: 2023-09-01
-end_date: 2024-12-01
 field: "Medical Imaging, Computer Vision"
 status: "Completed"
 summary: "Multi-organ segmentation and 3D reconstruction software platform development for CT images."
