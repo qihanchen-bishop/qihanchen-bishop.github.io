@@ -49,6 +49,17 @@
           <strong>Field:</strong> {{ post.field }}
         </p>
       {% endif %}
+      
+      {% if post.contributions %}
+        <div class="project-contributions">
+          <h3 class="contributions-title">Key Contributions:</h3>
+          <ul class="contributions-list">
+            {% for item in post.contributions %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
     </div>
     
 <!--     {% if post.team %}
@@ -60,16 +71,6 @@
     {% endif %} -->
   
     <!-- 项目贡献列表 -->
-    {% if post.contributions %}
-      <div class="project-contributions">
-        <h3 class="contributions-title">Key Contributions:</h3>
-        <ul class="contributions-list">
-          {% for item in post.contributions %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
 
     {% if post.description and site.read_more != 'enabled' %}
       <p class="archive__item-description" itemprop="description">{{ post.description | markdownify }}</p>
