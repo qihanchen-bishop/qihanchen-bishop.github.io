@@ -24,17 +24,31 @@
       </div>
     {% endif %}
 
+    <!-- 标题去链接化 -->
     <h2 class="archive__item-title" itemprop="name">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
+      {{ title }}  <!-- 直接输出标题文本，不添加链接 -->
     </h2>
     
-    {% if post.status %}
-      <p class="page__meta"><strong>Status:</strong> {{ post.status }}</p>
-    {% endif %}
+    <!-- 项目元信息区块 -->
+    <div class="project-meta-block">
+      {% if post.status %}
+        <p class="page__meta"><strong>Status:</strong> {{ post.status }}</p>
+      {% endif %}
+      
+      {% if post.duration %}
+        <p class="page__meta">
+          <strong><i class="fa fa-clock-o" aria-hidden="true"></i> Duration:</strong> 
+          {{ post.duration }}
+        </p>
+      {% endif %}
+      
+      <!-- 独立显示的Field字段 -->
+      {% if post.field %}
+        <p class="page__meta project-field">
+          <strong>Field:</strong> {{ post.field }}
+        </p>
+      {% endif %}
+    </div>
     
     {% if post.team %}
       <p class="page__meta"><strong>Team:</strong> {{ post.team }}</p>
@@ -43,14 +57,8 @@
     {% if post.date %}
       <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Date:</strong> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
     {% endif %}
-
-    {% if post.duration %}
-      <p class="page__meta">
-        <strong><i class="fa fa-clock-o" aria-hidden="true"></i>Duration:</strong> 
-        {{ post.duration }}
-      </p>
-    {% endif %}
   
+    <!-- 项目贡献列表 -->
     {% if post.contributions %}
       <div class="project-contributions">
         <h3 class="contributions-title">Key Contributions:</h3>
@@ -68,17 +76,19 @@
       <p class="archive__item-description" itemprop="description">{{ post.description | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p>
     {% endif %}
     
-    {% if post.repository_url %}
-      <p><a href="{{ post.repository_url }}">Project Repository</a></p>
-    {% endif %}
-    
-    {% if post.demo_url %}
-      <p><a href="{{ post.demo_url }}">Demo / Website</a></p>
-    {% endif %}
+    <!-- 项目链接 -->
+    <div class="project-links">
+      {% if post.repository_url %}
+        <p><a href="{{ post.repository_url }}">Project Repository</a></p>
+      {% endif %}
+      
+      {% if post.demo_url %}
+        <p><a href="{{ post.demo_url }}">Demo / Website</a></p>
+      {% endif %}
 
-    {% if post.documentation_url %}
-      <p><a href="{{ post.documentation_url }}">Documentation</a></p>
-    {% endif %}
-    
+      {% if post.documentation_url %}
+        <p><a href="{{ post.documentation_url }}">Documentation</a></p>
+      {% endif %}
+    </div>
   </article>
 </div>
