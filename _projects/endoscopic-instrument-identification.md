@@ -1,6 +1,7 @@
 ---
 title: "Endoscopic Surgical Instrument Autonomous Identification (Object detection)"
 field: "Medical AI, Object Detection"
+date: 2021-06-01
 duration: Jun 2021 - Mar 2022  
 status: "Completed"
 summary: "Arrow bounding box model for surgical instrument detection with enhanced real-time performance."
