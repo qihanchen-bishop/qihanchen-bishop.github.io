@@ -1,7 +1,5 @@
 ---
 title: "Sun Yat-sen University Eye Center Hospital-Professor He Mingguang Summer AI Internship Project - Retinal Arteriovenous Classification (Semantic Segmentation)"
-date: 2022-05-01
-end_date: 2022-09-30
 field: "Medical Imaging, AI"
 status: "Completed"
 summary: "Retinal arteriovenous classification using deep learning and topological graph correction."
