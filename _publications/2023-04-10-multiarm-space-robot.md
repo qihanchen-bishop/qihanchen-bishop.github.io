@@ -11,3 +11,14 @@ citation: 'Peng, J., Wu, H., Zhang, C., <b>Chen, Q.</b>, Meng, D., & Wang, X. (2
 ---
 
 This paper proposes an integrated framework for modeling, cooperative planning, and compliant control of multi-arm space continuous robots to achieve autonomous target manipulation in microgravity environments.
+
+<!--more-->
+
+### Highlights
+
+- **Closed-chain kinematics and dynamics modeling**: The authors derive general formulations describing the kinematic and dynamic behavior of multi-arm continuous robots interacting with a target object in space, based on the closed-chain constraints.
+- **Two-phase cooperative planning**: For the pre-capture stage, null-space solutions under joint constraints are explored to plan feasible cable parameters. For the post-capture stage, nonlinear optimization is used to minimize base disturbance during manipulation.
+- **Compliant hybrid control**: A novel control strategy combining force and pose objectives is introduced to optimize internal force distribution and minimize cable tension after capture.
+- **Co-simulation validation**: The proposed method is verified using a co-simulation platform built with MATLAB and SimMechanics, demonstrating its effectiveness and robustness in various manipulation scenarios.
+
+[📄 Read full paper on ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0307904X23002123)
