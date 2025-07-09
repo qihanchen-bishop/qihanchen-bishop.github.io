@@ -3,6 +3,7 @@ title: "Summer AI Internship Project - Retinal Arteriovenous Classification (Sem
 field: "Medical Imaging, AI"
 status: "Completed"
 summary: "Retinal arteriovenous classification using deep learning and topological graph correction."
+date: 2022-05-01
 duration: May 2022 - Sep 2022  
 contributions:
 - Unet was used to complete the preliminary classification of retinal arteriovenous in fundus color images.  
