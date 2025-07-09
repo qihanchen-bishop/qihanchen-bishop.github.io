@@ -1,7 +1,5 @@
 ---
 title: "Design and Control of a Cable-driven Snake-like Robot (Robot Design and Control)"
-date: 2022-09-01
-end_date: 2023-09-30
 field: "Robotics, Control Systems"
 status: "Completed"
 summary: "Development of modular snake-like robot with dynamic modeling and impedance control."
