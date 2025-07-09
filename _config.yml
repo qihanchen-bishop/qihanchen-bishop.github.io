@@ -24,8 +24,7 @@ repository               : "qihanchen-bishop/qihanchen-bishop.github.io"
 author:
   # Biographic information
   avatar           : "qihan.jpg"
-  name             : "Qihan Chen"
-  pronouns         : "he/him" # example: "she/her"  
+  name             : "Qihan Chen"  
   bio              : "Ph.D. student @ PolyU HK <br /> M.E. & B.E. @ SYSU"
   location         : "Earth"
   employer         : "PolyU (Hong Kong)"
