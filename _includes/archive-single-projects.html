@@ -1,0 +1,66 @@
+{% if post.header.summary %}
+  {% capture summary %}{{ post.header.summary }}{% endcapture %}
+{% else %}
+  {% assign summary = site.project_summary %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/Project">
+    {% if include.type == "grid" and summary %}
+      <div class="archive__item-summary">
+        <img src=
+          {% if summary contains "://" %}
+            "{{ summary }}"
+          {% else %}
+            "{{ summary | prepend: "/images/" | prepend: base_path }}"
+          {% endif %}
+          alt="">
+      </div>
+    {% endif %}
+
+    <h2 class="archive__item-title" itemprop="name">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h2>
+    
+    {% if post.status %}
+      <p class="page__meta"><strong>Status:</strong> {{ post.status }}</p>
+    {% endif %}
+    
+    {% if post.team %}
+      <p class="page__meta"><strong>Team:</strong> {{ post.team }}</p>
+    {% endif %}
+    
+    {% if post.date %}
+      <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Date:</strong> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
+    {% endif %}
+
+    {% if post.description and site.read_more != 'enabled' %}
+      <p class="archive__item-description" itemprop="description">{{ post.description | markdownify }}</p>
+    {% elsif post.description and site.read_more == 'enabled' %}
+      <p class="archive__item-description" itemprop="description">{{ post.description | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p>
+    {% endif %}
+    
+    {% if post.repository_url %}
+      <p><a href="{{ post.repository_url }}">Project Repository</a></p>
+    {% endif %}
+    
+    {% if post.demo_url %}
+      <p><a href="{{ post.demo_url }}">Demo / Website</a></p>
+    {% endif %}
+
+    {% if post.documentation_url %}
+      <p><a href="{{ post.documentation_url }}">Documentation</a></p>
+    {% endif %}
+    
+  </article>
+</div>
