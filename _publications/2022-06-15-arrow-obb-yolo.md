@@ -1,7 +1,7 @@
 ---
 title: "Autonomous Recognition of Multiple Surgical Instruments Tips Based on Arrow OBB-YOLO Network"
 collection: publications
-category: journal
+category: manuscripts
 permalink: /publication/2022-06-20-arrow-obb-yolo
 excerpt: "We propose an Arrow OBB-YOLO network for precise real-time recognition of surgical instrument tips. The method encodes both location and orientation using arrow-shaped bounding boxes."
 date: 2022-06-20
